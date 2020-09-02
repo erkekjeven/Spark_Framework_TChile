@@ -24,7 +24,7 @@ Template project. Integration of Spark + Intellij Idea + Scala.
 
 
 ### Configuration
-    (don't touch these parameters)
+    (Don't touch these parameters)
 
 **.env -->**
 
@@ -39,15 +39,13 @@ Template project. Integration of Spark + Intellij Idea + Scala.
 ### Modify:
 **.env -->** 
 
-    USER=your_user
-
-    HOSTNAME=server_ip
-
-    REMOTE_PATH=/your_path
+    USER=[USER]
+    HOSTNAME=[HOST_IP]
+    REMOTE_PATH=[REMOTE_PATH]
 
 **Makefile -->** 
 
-    rsync -v -r ./scripts/ $(USER)@$(HOSTNAME):$(REMOTE_PATH)/template
+    rsync -v -r ./scripts/ $(USER)@$(HOSTNAME):$(REMOTE_PATH)/[PROJECT_PATH]
 
 ### Coding
 You can create your processors and add you table schemas in de path /src/main/scala/tchile/advanced/analytics/
@@ -56,12 +54,25 @@ And then create the script to call the processors in /scripts/
 
 **run.sh-->**
 
-        CLASS=tchile.advanced.analytics.processors.Tentados_web
-        TARGET=hdfs://nn:8020/applications/template/spark-project_2.11-1.0.jar
+Set the user you will use
+        
+        KEYTAB=~/.ssh/[USER].keytab
+        PRINCIPAL=[USER]@TCHILE.LOCAL
 
 Modify the CLASS you need to call and the TARGET you will deposit the jar file
 
+        CLASS=tchile.advanced.analytics.processors.ETL_Example
+        TARGET=hdfs://nn:8020/applications/[etl_example]/spark-project_2.11-1.0.jar
+
 And also you can modify other parameters your project need to run
+
+**application.conf-->**
+
+Set Oracle parameters
+
+        url=[ORACLE_URL]
+        user=[ORACLE_USER]
+        password=[ORACLE_PASSWORD]
 
 ### Deploy
 In other terminal in IntelliJ run:

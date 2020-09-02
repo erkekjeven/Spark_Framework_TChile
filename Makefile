@@ -21,4 +21,4 @@ shell: ## Execute a shell into the container
 deploy: ## Deploy all necessary files to run the application on the cluster
 	cp ./target/scala-2.11/spark-project_2.11-1.0.jar scripts
 	cp -r ./lib scripts
-	rsync -v -r ./scripts/ $(USER)@$(HOSTNAME):$(REMOTE_PATH)/template
+	rsync -v -r ./scripts/ $(USER)@$(HOSTNAME):$(REMOTE_PATH)/[PROJECT_PATH]
