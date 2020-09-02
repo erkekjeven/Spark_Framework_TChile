@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 # Execution yarn parameters
 COLA=procesamiento
-DRIVER_MEMORY=20G
-EXECUTOR_MEMORY=20G
-NUM_EXECUTORS=50
+DRIVER_MEMORY=5G
+EXECUTOR_MEMORY=5G
+NUM_EXECUTORS=10
 SPARK_UI_PORT=6044
 CLASS=tchile.advanced.analytics.processors.ETL_Example
 TARGET=hdfs://nn:8020/applications/etl_example/spark-project_2.11-1.0.jar
