@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  spark-sbt:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+      args:
+        SBT_VERSION: ${SBT_VERSION}
+    volumes:
+      - "./:/code"
