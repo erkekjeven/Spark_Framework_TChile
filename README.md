@@ -16,7 +16,7 @@ Template project. Integration of Spark + Intellij Idea + Scala.
 
 - Go to terminal in IntelliJ and run:
 
-        $ make build
+        $ make build #(Only the first time)
 
         $ make up
 
