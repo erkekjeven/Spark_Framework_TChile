@@ -28,7 +28,7 @@ Template project. Integration of Spark + Intellij Idea + Scala.
 
 **.env -->**
 
-    SBT_VERSION=0.13.15.2
+    SBT_VERSION=0.13.18
 
 **build.sbt -->** 
 
@@ -74,7 +74,12 @@ Set Oracle parameters
         user=[ORACLE_USER]
         password=[ORACLE_PASSWORD]
 
-### Deploy
+### Deploy (From Unix-based system to Cluster)
 In other terminal in IntelliJ run:
 
         $ make deploy
+
+### Deploy (From Windows based system to Cluster)
+In other terminal in IntelliJ run:
+
+        $ make deploy-windows

@@ -3,15 +3,13 @@ FROM openjdk:8
 ARG SBT_VERSION
 
 RUN \
-  curl -L -o sbt-${SBT_VERSION}.deb http://dl.bintray.com/sbt/debian/sbt-${SBT_VERSION}.deb && \
-  dpkg -i sbt-${SBT_VERSION}.deb && \
-  rm sbt-${SBT_VERSION}.deb && \
+  curl -L -o sbt-${SBT_VERSION}.zip https://github.com/sbt/sbt/releases/download/v${SBT_VERSION}/sbt-${SBT_VERSION}.zip && \
+  unzip sbt-${SBT_VERSION}.zip -d ops && \
   apt-get update && \
-  apt-get install sbt && \
-  sbt sbtVersion
+  /ops/sbt/bin/sbt sbtVersion
 
 WORKDIR /code
 
 ADD . /code
 
-CMD sbt clean ~package
+CMD /ops/sbt/bin/sbt clean ~package
